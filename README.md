@@ -6,7 +6,7 @@ Made for Terrene SMP but now fully configureable!
 ## v2.0
  - Fully configureable!
 
-   - To get this knowledge but in game
+   - To get this knowledge but in game:
  /farm   or   /farm help
 
     - To create a new farm:
