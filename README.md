@@ -5,7 +5,6 @@ Made for Terrene SMP but now fully configureable!
 
 ## v2.0
  - Fully configureable!
-     \~~COMMANDS~~
 
    - To get this knowledge but in game
  /farm   or   /farm help
