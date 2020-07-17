@@ -1,5 +1,5 @@
 # FarmCommand-scarpet
-Adds /farm command to spawn a fake player at a certain position
+Adds /farm command to spawn a fake player at a certain position \n
 Made for Terrene SMP but now fully configureable!
 
 
