@@ -1,0 +1,18 @@
+//invlib by Sir_Gav
+
+
+
+giveItems(player,item,num) ->
+(
+    print(item);
+    nextSlot = inventory_find(player());
+    print(nextSlot);
+    inventory_set(player(), nextSlot, null, 1, item);
+    print(item  + 'given');
+);
+
+
+giveItem(player,item) ->
+(
+    giveItems(player,item,1);
+);
