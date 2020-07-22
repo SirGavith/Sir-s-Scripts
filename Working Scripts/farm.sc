@@ -1,4 +1,4 @@
-// /farm command by Sir_Gav  v2.0
+// /farm command by Sir_Gav  v2.1
 //written origionally for for Terrene SMP
 
 //      ~~COMMANDS~~
