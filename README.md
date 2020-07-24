@@ -1,4 +1,29 @@
 # Sir's-Scripts
-
+## Released Scripts
 ### Farm
  - Adds /farm command to spawn a fake player at a certain position
+## Un-Released Scripts - Don't expect these to work
+### carefulbreak - not functional
+ - Trys to implement carefulbreak in scarpet (not functional)
+### feed - works
+ - Adds `/feed` command that gives you full hunger and saturation
+### g - not functional
+ - Trys to alias `/give @p xxx` with `/g xxx`, but current scarpet does not allow for it
+### gmc, gms, gmsp - works
+ - Three very useful scripts that change the gamamode of the player
+### head - kinda works
+ - Puts the item in the player's hand on their head, but does delete things so dont try in survival
+### invLib - doesnt work
+ - I'm not sure why this doesnt work, it is a lib adding a few methods :
+   - `giveItems(player,item,num)`
+   - `giveItem(player,item)`
+### plog - doesn't work
+ - adds /plog \[thing] to do /log \[thing] whenever you jopin, so you dont have to do /log tps every time the server restarts
+### rename - doesn't work
+ - renames item in hand with `/rename asdf`
+### speed - works
+ - `/speed 10` gives you speed 10 and `/speed 100` gives you speed 100
+### stat - doesn't work
+ - Trys to add a stat command, might scrap soon
+### v - works
+ - Adds 'vanish' command as `/v`, makes you invis w/o particles, and gives you speed and night vision
