@@ -2,7 +2,7 @@
 ## Released Scripts
 ### Farm
  - Adds /farm command to spawn a fake player at a certain position
-### waila - works
+### waila
  - What am I looking at? - `/script load waila` lets you know exactly what block you're looking at
  
 ## Un-Released Scripts - Don't expect these to work
