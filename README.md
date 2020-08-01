@@ -17,6 +17,8 @@
  - I'm not sure why this doesnt work, it is a lib adding a few methods :
    - `giveItems(player,item,num)`
    - `giveItem(player,item)`
+### MCCmds - works
+ - Huge library of all vanilla minecraft commands!
 ### plog - doesn't work
  - adds /plog \[thing] to do /log \[thing] whenever you jopin, so you dont have to do /log tps every time the server restarts
 ### rename - doesn't work
@@ -27,3 +29,5 @@
  - Trys to add a stat command, might scrap soon
 ### v - works
  - Adds 'vanish' command as `/v`, makes you invis w/o particles, and gives you speed and night vision
+### waila - works
+ - What am I looking at? - `/script load waila` lets you know exactly what block you're looking at
