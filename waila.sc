@@ -1,46 +1,32 @@
-//these first three methods will eventually be avalible in mccmds
-bossbar_add(id,name) -> run('bossbar add '+id+' "'+name+'"');
-bossbar_set_players(id,target) -> run('bossbar set '+id+' players '+target);
-bossbar_set_name(id,name) -> run('bossbar set '+id+' name "'+name+'"');
-bossbar_remove(id) -> run('bossbar remove '+id);  
-bossbar_set_color(id,color) -> run('bossbar set '+id+' color '+color);
+import(mccmds,bossbar_add,bossbar_set_players,bossbar_set_name,bossbar_remove,bossbar_set_color,bossbar_set_visible);
 
 //waila - what am i looking at by Sir_Gav
 __config()-> {'stay_loaded' -> true,'scope'->'global'};
 
-
-//todo change color and fullness
 bossbar_add('waila','');
 bossbar_set_players('waila',player());
 bossbar_set_color('waila','white');
 bossbar_visible = true;
 
-
-
-hide_bossbar() -> (
-    run('bossbar set waila visible false');
-    bossbar_visible = false;
-);
-show_bossbar() -> (
-    run('bossbar set waila visible true');
-    bossbar_visible = true;
-);
-correct_bossbar(facing_block) -> (
+set_bossbar(facing_block) -> (
     if(
-        facing_block == 'air', hide_bossbar(),
-        //elif
-        facing_block != 'air', show_bossbar();
+        facing_block == 'air',
+        bossbar_set_visible('waila','false');
+        bossbar_visible = false,
+        //else
+        bossbar_set_name('waila',format_block_name(facing_block));
+        bossbar_set_visible('waila','true');
+        bossbar_visible = true;
     );
 );
 
 format_block_name(mc_name) -> (
-    fancy_name = '';
+    //fancy_name = '';
     for(split('_',mc_name),
         fancy_name += title(_)+' ';
     );
     return(fancy_name);
 );
-
 
 player_looking_at(target) -> (
     location = pos(target)+[0,1.6,0];
@@ -56,11 +42,10 @@ player_looking_at(target) -> (
 
 __on_tick() -> (
     facing_block = player_looking_at(player());
-    correct_bossbar(facing_block);
-    bossbar_set_name('waila',format_block_name(facing_block));
+    if(
+        facing_block == 'air' && bossbar_visible == true || facing_block != 'air' &&bossbar_visible == false,
+        set_bossbar(facing_block);
+    );
 );
 
 __on_close() -> (bossbar_remove('waila'))
-
-
-//__command() ->
