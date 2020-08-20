@@ -4,6 +4,9 @@
  - Adds /farm command to spawn a fake player at a certain position
 ### waila
  - What am I looking at? - `/script load waila` lets you know exactly what block you're looking at
+### Right Click Harvest
+ - Adds ability to right click crops to harvest & replant them!
+ - Currently works with Wheat, Carrots, Potatoes, Beetroots, and Nether Wart
  
 ## Un-Released Scripts - Don't expect these to work
 ### carefulbreak - not functional
