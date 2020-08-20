@@ -1,5 +1,6 @@
 __config()-> {'stay_loaded' -> true,'scope'->'global'};
 
+//change this value to adjust the radius that blocks start moving toward you
 global_pickup_radius = 7;
 
 __on_tick()->(
