@@ -1,4 +1,7 @@
 global_tillable_blocks = ['dirt','coarse_dirt','grass_block','mycelium','grass_path'];
+
+__config()-> ({'stay_loaded' -> true});
+
 __command() ->(
     block = player() ~ 'trace';
     if(
