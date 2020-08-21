@@ -11,7 +11,7 @@
  - Name a nether star `Magnet` (not case sensitive) and it will pull nearby items to you
  - Right click nether star to toggle magnet
 ### Till
- - Type `/till` whilt facing a tillable block, and it will turn to farmland
+ - Type `/till` while facing a tillable block, and it will turn to farmland
  
 ## Un-Released Scripts - Don't expect these to work
 ### carefulbreak - not functional
