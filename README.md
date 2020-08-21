@@ -1,6 +1,6 @@
 # Sir's-Scripts
 
-### Join my Discord (Here!)[
+### Join my Discord [Here!](https://discord.gg/wRZ7mex)
 
 ## Released Scripts
 ### Farm
