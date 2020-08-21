@@ -7,6 +7,11 @@
 ### Right Click Harvest
  - Adds ability to right click crops to harvest & replant them!
  - Currently works with Wheat, Carrots, Potatoes, Beetroots, and Nether Wart
+### Magnet
+ - Name a nether star `Magnet` (not case sensitive) and it will pull nearby items to you
+ - Right click nether star to toggle magnet
+### Till
+ - Type `/till` whilt facing a tillable block, and it will turn to farmland
  
 ## Un-Released Scripts - Don't expect these to work
 ### carefulbreak - not functional
