@@ -70,8 +70,8 @@ experience_set(target,amount,type) -> run('experience set '+target+' '+amount+' 
 
 //fill()  use scan() + set()
 
-forceload_add(pos1,pos2) -> run('forceload add '+pos1[0]+' '+pos1[1]+' '+pos2[0]+' '+pos2[1]);
-forceload_remove(x1,y1,x2,y2) -> run('forceload remove '+pos1[0]+' '+pos1[1]+' '+pos2[0]+' '+pos2[1]);
+forceload_add(pos1,pos2) -> run('forceload add '+pos1:0+' '+pos1:1+' '+pos2:0+' '+pos2:1);
+forceload_remove(x1,y1,x2,y2) -> run('forceload remove '+pos1:0+' '+pos1:1+' '+pos2:0+' '+pos2:1);
 //pos1 and pos2 are lists with two coords, not chunk coords, but real ones
 forceload_remove_all() -> run('forceload remove all');
 //forceload_query just prints to chat
@@ -139,20 +139,20 @@ saveoff() -> run('save-off');
 
 setidletimeout(minutes) -> run('setidletimeout '+minutes);
 
-setworldspawn(pos) -> run('setworldspawn '+pos[0]+' '+pos[1]+' '+pos[2]);
-setworldspawn_angle(pos,angle) -> run('setworldspawn '+pos[0]+' '+pos[1]+' '+pos[2]+' '+angle[0]+' '+angle[1]);
+setworldspawn(pos) -> run('setworldspawn '+pos:0+' '+pos:1+' '+pos:2);
+setworldspawn_angle(pos,angle) -> run('setworldspawn '+pos:0+' '+pos:1+' '+pos:2+' '+angle:0+' '+angle:1);
 //setworldspawn_angle is only avalible on 1.16.2
 //pos must be a list
 
-spawnpoint(target,pos) -> run('spawnpoint 'target+' '+pos[0]+' '+pos[1]+' '+pos[2]);
-spawnpoint_angle(target,pos,angle) -> run('spawnpoint 'target+' '+pos[0]+' '+pos[1]+' '+pos[2]+' '+angle[0]+' '+angle[1]);
+spawnpoint(target,pos) -> run('spawnpoint '+target+' '+pos:0+' '+pos:1+' '+pos:2);
+spawnpoint_angle(target,pos,angle) -> run('spawnpoint '+target+' '+pos:0+' '+pos:1+' '+pos:2+' '+angle:0+' '+angle:1);
 //spawnpoint_angle is only avalible on 1.16.2
 //pos must be a list
 
 spectate(target,spectator) -> run('spectate '+target+' '+spectator);
 
-spreadplayers(center,spread_distance,max_range,respect_teams,targets) -> run('spreadplayers '+center+' '+spread_distance+' '+max_range+' '+respect_teams+' 'targets);
-spreadplayers_under(center,spread_distance,max_range,max_height,respect_teams,targets) -> run('spreadplayers '+center+' '+spread_distance+' '+max_range+' under '+max_height+' '+respect_teams+' 'targets);
+spreadplayers(center,spread_distance,max_range,respect_teams,targets) -> run('spreadplayers '+center+' '+spread_distance+' '+max_range+' '+respect_teams+' '+targets);
+spreadplayers_under(center,spread_distance,max_range,max_height,respect_teams,targets) -> run('spreadplayers '+center+' '+spread_distance+' '+max_range+' under '+max_height+' '+respect_teams+' '+targets);
 
 stop() -> run('stop');
 
@@ -173,11 +173,11 @@ team_remove(team) -> run('team remove '+team);
 //teammsg  try: run(execute as player run teammsg message)
 
 teleport_player(target,destination_player) -> run('teleport '+target+' '+destination_player);
-teleport_pos(target,pos) -> run('teleport '+target+' '+pos[0]+' '+pos[1]+' '+pos[2]);
-teleport_pos_rotation(target,pos,rotation) -> run('teleport '+target+' '+pos[0]+' '+pos[1]+' '+pos[2]+' '+rotation[0]+' '+rotation[1]);
-teleport_pos_facing_loction(target,pos,facing_pos) -> run('teleport '+target+' '+pos[0]+' '+pos[1]+' '+pos[2]+' facing '+facing_pos[0]+' '+facing_pos[1]+' '+facing_pos[2]);
-teleport_pos_facing_entity_eyes(target,pos,entity) -> run('teleport '+target+' '+pos[0]+' '+pos[1]+' '+pos[2]+' facing entity '+entity+' eyes');
-teleport_pos_facing_entity_feet(target,pos,entity) -> run('teleport '+target+' '+pos[0]+' '+pos[1]+' '+pos[2]+' facing entity '+entity+' feet');
+teleport_pos(target,pos) -> run('teleport '+target+' '+pos:0+' '+pos:1+' '+pos:2);
+teleport_pos_rotation(target,pos,rotation) -> run('teleport '+target+' '+pos:0+' '+pos:1+' '+pos:2+' '+rotation:0+' '+rotation:1);
+teleport_pos_facing_loction(target,pos,facing_pos) -> run('teleport '+target+' '+pos:0+' '+pos:1+' '+pos:2+' facing '+facing_pos:0+' '+facing_pos:1+' '+facing_pos:2);
+teleport_pos_facing_entity_eyes(target,pos,entity) -> run('teleport '+target+' '+pos:0+' '+pos:1+' '+pos:2+' facing entity '+entity+' eyes');
+teleport_pos_facing_entity_feet(target,pos,entity) -> run('teleport '+target+' '+pos:0+' '+pos:1+' '+pos:2+' facing entity '+entity+' feet');
 
 tell(target,message) -> run('tell '+target+' '+message);
 
@@ -189,7 +189,7 @@ world_time_set(time) -> run('time set '+time);
 //time in world_time_set can be a int 0 to 2^31-1, day|night|noon|midnight
 //time() is built-in and different, so I've called this world_time
 
-display_title(target,location,title) -> run('title '+target+' '+location+' '+title);
+display_title(target,location,title) -> run('title '+target+' '+location+' "'+title+'"');
 //location can be title|subtitle|actionbar
 display_title_clear(target) -> run('title '+target+'clear');
 display_title_reset(target) -> run('title '+target+'reset');
@@ -213,15 +213,15 @@ whitelist_add(target) -> run('whitelist add '+target);
 whitelist_off() -> run('whitelist off');
 whitelist_on() -> run('whitelist on');
 whitelist_reload() -> run('whitelist reload'); //what are you doing that needs this lol
-whitelist_remove(target) -> run'whitelist remove '+target);
+whitelist_remove(target) -> run('whitelist remove '+target);
 
 worldborder_add(distance,time) -> run('worldborder add '+distance+' '+time);
-worldborder_center(pos) -> run('worldborder center '+pos[0]+' '+pos[1]);
+worldborder_center(pos) -> run('worldborder center '+pos:0+' '+pos:1);
 //pos is a list of x and y 
 worldborder_damage_amount(damage_per_block) -> run('worldborder damage amount '+damage_per_block);
 worldborder_damage_buffer(distance) -> run('worldborder damage buffer '+distance);
 worldborder_set(diameter,time) -> run('worldborder set '+diameter+' '+time);
 worldborder_warning_distance(warning_distance) -> run('worldborder warning distance '+warning_distance);
-worldborder_warning_time(warning_time) -> run('worldborder warning time '+warning_time);
+worldborder_warning_time(warning_time) -> run('worldborder warning time '+warning_time)
 
 //xp  use experience()
