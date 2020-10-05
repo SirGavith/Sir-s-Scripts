@@ -17,8 +17,8 @@
  - Type `/till` while facing a tillable block, and it will turn to farmland
  
 ## Un-Released Scripts - Don't expect these to work
-### carefulbreak - not functional
- - Trys to implement carefulbreak in scarpet (not functional)
+### carefulbreak - works
+ - Carefulbreak - broken blocks go straight into your inventory
 ### feed - works
  - Adds `/feed` command that gives you full hunger and saturation
 ### g - not functional
