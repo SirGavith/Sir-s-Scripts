@@ -43,3 +43,5 @@
  - Trys to add a stat command, might scrap soon
 ### v - works
  - Adds 'vanish' command as `/v`, makes you invis w/o particles, and gives you speed and night vision
+### we - in dev
+ - WorldEdit copy. This version is a WIP so dont expect it to work
