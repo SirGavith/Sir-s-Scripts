@@ -1,0 +1,67 @@
+
+//import syntax:
+// import('matrixlib','is_matrix','create_matrix','matrix_set','matrix_get','matrix_get_size','matrix_print');
+
+global_errors = {'out_of_bounds' -> 'Matrix index out of bounds','not_matrix'-> 'That\'s not a matrix'};
+
+_error(error_type) -> (
+    if(global_errors:error_type, error_message = global_errors:error_type);
+    print(format('r Error in matrixlib: '+error_message));
+    return(error_message);
+);
+
+is_matrix(matrix)-> (
+    if(type(matrix)== 'map' && matrix:'is_matrix' == true, return(true),return(false));
+);
+
+
+create_matrix(rownum, columnnum) -> (
+
+    rows = [];
+    for(range(rownum+1),
+        row = [];
+        for(range(columnnum+1),
+            row += 0;
+        );
+        rows += row;
+    );
+
+    matrix = {'is_matrix'->true,'size'->[rownum, columnnum], 'matrix'-> rows};
+
+    return(matrix);
+);
+
+matrix_set(matrix,row,column,value) -> (
+    if(!is_matrix(matrix),return(_error('not_matrix')));
+
+    size = matrix:'size';
+    if(size:0 < row || size:1 < column, return(_error('out_of_bounds')));
+
+    matrix:'matrix':row:column = value;
+);
+
+matrix_get(matrix,row,column) -> (
+    if(!is_matrix(matrix),return(_error('not_matrix')));
+
+    size = matrix:'size';
+    if(size:0 < row || size:1 < column, return(_error('out_of_bounds')));
+
+    return(matrix:'matrix':row:column);
+);
+
+matrix_get_size(matrix) -> (
+    if(!is_matrix(matrix),return(_error('not_matrix')));
+    return(matrix:'size');
+);
+
+matrix_print(matrix) -> (
+    if(!is_matrix(matrix),return(_error('not_matrix')));
+
+    print(format('b Matrix:'));
+
+    print(format('c Size: ', 'w '+str(matrix:'size')));
+
+    for(matrix:'matrix',
+        print(format('y '+_));
+    );
+);
